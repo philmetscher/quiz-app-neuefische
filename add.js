@@ -9,7 +9,8 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
 
-  createCard(data.question, data.answer, data.tag);
+  const newCard = createCard(data.question, data.answer, data.tag);
+  cardList.append(newCard);
 });
 
 const question = document.querySelector('[data-js="question"]');
